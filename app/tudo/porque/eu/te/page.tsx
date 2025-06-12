@@ -39,11 +39,13 @@ export default function PageThree() {
                         whileHover={{ scale: 1.05 }}
                         onClick={() => setIsOpen(true)}
                     >
-                        <Image
-                            src={Fotos}
-                            alt="Fotos"
-                            className="w-full h-full object-cover"
-                        />
+                        <a href="/tudo/porque/eu/te/amo">
+                            <Image
+                                src={Fotos}
+                                alt="Fotos"
+                                className="w-full h-full object-cover"
+                            />
+                        </a>
                     </motion.div>
                 </div>
 

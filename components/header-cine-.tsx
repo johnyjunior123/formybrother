@@ -2,12 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Cine from '@/public/assets/pagefour/cine.png';
-import Amor from '@/public/assets/pagefour/amor.png';
-import Coracao from '@/public/assets/pagefour/coracao.png';
-import Coracoes from '@/public/assets/pagefour/coracoes.png';
-import Folha from '@/public/assets/pagefour/folha.png';
-import Gato from '@/public/assets/pagefour/gato.png';
-import Estrela from '@/public/assets/pagefour/estrela.png';
+import Amor from '@/public/assets/pagefour/Imagem10.png';
+import Coracao from '@/public/assets/pagefour/Imagem5.png';
+import Coracoes from '@/public/assets/pagefour/Imagem6.png';
+import Folha from '@/public/assets/pagefour/Imagem7.png';
+import Gato from '@/public/assets/pagefour/Imagem8.png';
+import Estrela from '@/public/assets/pagefour/Imagem9.png';
 import Image from 'next/image';
 
 export function HeaderCine() {
@@ -22,39 +22,33 @@ export function HeaderCine() {
                     ease: 'linear',
                 }}
             >
-                <div className="flex">
-                    <div className="relative w-screen h-full">
-                        <Image
-                            src={Cine}
-                            alt="Fita de cinema"
-                            fill
-                            className="object-cover"
-                        />
-                        <div className="absolute inset-0 flex justify-center items-center gap-24">
-                            <Image src={Amor} alt="" width={160} height={160} />
-                            <Image src={Coracao} alt="" width={160} height={160} />
-                            <Image src={Coracoes} alt="" width={160} height={160} />
-                            <Image src={Folha} alt="" width={160} height={160} />
-                            <Image src={Gato} alt="" width={160} height={160} />
-                            <Image src={Estrela} alt="" width={160} height={160} />
-                        </div>
+                <div className="flex relative w-screen h-full">
+                    <Image
+                        src={Cine}
+                        alt="Fita de cinema"
+                        fill
+                        className="object-cover"
+                    />
+                    <div className="flex flex-1 inset-0 flex justify-center items-center gap-2"> {
+                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img) => (
+                            <Image src={img} alt="" className='w-full' />
+                        ))
+                    }
                     </div>
+                </div>
 
-                    <div className="relative w-screen h-full">
-                        <Image
-                            src={Cine}
-                            alt="Fita de cinema"
-                            fill
-                            className="object-cover"
-                        />
-                        <div className="absolute inset-0 flex justify-center items-center gap-4">
-                            <Image src={Amor} alt="" width={160} height={160} />
-                            <Image src={Coracao} alt="" width={160} height={160} />
-                            <Image src={Coracoes} alt="" width={160} height={160} />
-                            <Image src={Folha} alt="" width={160} height={160} />
-                            <Image src={Gato} alt="" width={160} height={160} />
-                            <Image src={Estrela} alt="" width={160} height={160} />
-                        </div>
+                <div className="flex relative w-screen h-full">
+                    <Image
+                        src={Cine}
+                        alt="Fita de cinema"
+                        fill
+                        className="object-cover"
+                    />
+                    <div className="flex flex-1 inset-0 flex justify-center items-center gap-2"> {
+                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img) => (
+                            <Image src={img} alt="" className='w-full' />
+                        ))
+                    }
                     </div>
                 </div>
             </motion.div>

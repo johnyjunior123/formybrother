@@ -55,7 +55,9 @@ export default function PageTwo() {
                         variants={fadeUp}
                         custom={1}
                     >
-                        TE AMO
+                        <a href='/tudo/porque/eu/te' className='cursor-pointer'>
+                            TE AMO
+                        </a>
                     </motion.span>
                 </h1>
             </motion.div>
