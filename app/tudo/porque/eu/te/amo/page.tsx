@@ -8,6 +8,11 @@ import CoracaoRightSmall from '@/public/assets/pagefour/coracao-pequeno-rigth.pn
 import Coracao from '@/public/assets/pagefour/coracao-center.png'
 import CineLeft from '@/public/assets/pagefour/leftCine.png'
 import CineRight from '@/public/assets/pagefour/rightCine.png'
+import localFont from 'next/font/local'
+
+const Above = localFont({
+  src: '../../../../../../public/fonts/above.otf',
+})
 
 import Image from 'next/image';
 
@@ -16,7 +21,7 @@ export default function PageFive() {
         <>
             <HeaderCine />
 
-            <main className="flex flex-1 "
+            <main className="flex flex-1 font-above-the-beyond"
                 style={{
                     backgroundImage: `
                     url(${CineLeft.src}),
@@ -29,26 +34,27 @@ export default function PageFive() {
                     right bottom
                     `,
                     backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
-                    backgroundSize: '40% auto, 8% auto, 40% auto'
+                    backgroundSize: '40% auto, 8% auto, 40% auto',
+                    fontFamily: 'above-the-beyond'
                 }}
             >
-                <div className='flex flex-1 justify-between h-full pl-4 pr-4'>
-                    <div>
-                        <Image src={CoracaoLeftSmall} alt="" />
-                        <Image src={CoracaoLeft} alt="" />
-                    </div>
-                    <div className='flex flex-col justify-center items-center text-black gap-14'>
-                        <h1 className='text-2xl font-bold'>Feliz dia dos Namorados
-                        </h1>
-                        <h2 className='text-lg'>Te amar virou meu hábito favorito… e nem preciso lembrar, meu coração já sabe de cor
-                        </h2>
-                    </div>
-                    <div>
-                        <Image src={CoracaoRight} alt="" />
-                        <Image src={CoracaoRightSmall} alt="" />
-                    </div>
+            <div className={`${Above.className} flex flex-1 justify-between h-full pl-4 pr-4`}>
+                <div>
+                    <Image src={CoracaoLeftSmall} alt="" />
+                    <Image src={CoracaoLeft} alt="" />
                 </div>
-            </main>
+                <div className='flex flex-col justify-center items-center text-black gap-14'>
+                    <h1 className='text-[45px] font-bold'>Feliz dia dos Namorados
+                    </h1>
+                    <h2 className='text-[25px]'>Te amar virou meu hábito favorito… e nem preciso lembrar, meu coração já sabe de cor
+                    </h2>
+                </div>
+                <div>
+                    <Image src={CoracaoRight} alt="" />
+                    <Image src={CoracaoRightSmall} alt="" />
+                </div>
+            </div>
+        </main >
         </>
     );
 }

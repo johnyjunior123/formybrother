@@ -1,79 +1,83 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion'
+import { useEffect } from 'react'
+import FotoPrincipal from '@/public/assets/pagetwo/fotoprincipal.png'
+import Foto1 from '@/public/assets/pagetwo/foto1.png'
+import Foto2 from '@/public/assets/pagetwo/foto2.png'
+import background from '@/public/assets/pagetwo/background-love.jpg'
+import EuTeAmo from '@/public/assets/pagetwo/euteamo.jpg'
+import Image from 'next/image'
+import CalendarMini from '@/components/mini-calendar'
+import localFont from 'next/font/local'
 
-import BackgroundBubble from '@/public/assets/pagefour-2/Imagem41.png';
-import LeftDeclaration from '@/public/assets/pagefour-2/Imagem42.png';
-import RightDeclaration from '@/public/assets/pagefour-2/Imagem43.png';
-import Fotos from '@/public/assets/pagefour-2/Imagem44.png';
+const Times = localFont({
+    src: '../../public/fonts/times.ttf',
+})
 
-export default function PageFour() {
-    const [isOpen, setIsOpen] = useState(false);
+export default function PageTwo() {
+    const controls = useAnimation()
+
+    useEffect(() => {
+        controls.start({
+            backgroundPosition: ['0% 0%', '50% 50%', '0% 0%'],
+            transition: {
+                duration: 15,
+                repeat: Infinity,
+                ease: 'easeInOut',
+            },
+        })
+    }, [controls])
 
     return (
-        <>
-            <header
-                className="h-[10vh] w-full"
-                style={{
-                    backgroundImage: `url(${BackgroundBubble.src})`,
-                }}
-            ></header>
+        <motion.main
+            animate={controls}
+            className={`${Times.className} flex flex-col h-screen w-screen bg-cover bg-no-repeat bg-black overflow-hidden`}
+            style={{
+                backgroundImage: `url(${background.src})`,
+                backgroundSize: '150%',
+            }}
+        >
+            <section className="flex flex-wrap justify-center items-center gap-40 px-4 py-6 flex-1">
+                <div className='flex flex-col'>
+                    <Image src={Foto1} alt="" className='max-w-[220px] w-full h-auto' />
+                    <Image src={Foto2} alt="" className='max-w-[220px] w-full h-auto' />
+                </div>
+                <Image src={FotoPrincipal} alt="" className='max-w-[340px] w-full h-auto' />
+                <div>
+                    <CalendarMini />
+                </div>
+            </section>
 
-            <main className="text-black flex-1 w-full  relative flex items-center justify-between px-4 md:px-12">
-                <section className="flex flex-col items-start justify-center gap-2 w-1/4 text-sm md:text-base">
-                    <h2 className="w-full text-center font-bold">Que o amor continue presente na nossa história</h2>
-                    <Image src={LeftDeclaration} alt="Esquerda" className="w-full h-auto" />
-                    <h2 className="w-full text-center font-semibold">Sou louco por você</h2>
-                </section>
-
-                <div className="relative z-10 w-[40vw] max-w-sm mx-auto">
-                    <motion.div
-                        className="cursor-pointer shadow-xl rounded-xl overflow-hidden"
-                        whileHover={{ scale: 1.05 }}
-                        onClick={() => setIsOpen(true)}
-                    >
-                        <Image src={Fotos} alt="Fotos" className="w-full h-auto object-contain" />
-                    </motion.div>
+            <section className="flex flex-col md:flex-row justify-around items-center gap-8 w-full p-6">
+                <div
+                    style={{
+                        backgroundColor: 'rgb(255, 255, 255)',
+                        boxShadow: '0 0 75px rgb(255, 255, 255)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                    }}
+                >
+                    <p className="text-black text-base md:text-lg font-medium italic leading-relaxed text-center">
+                        Os melhores dias da minha vida foram, são, e vão ser ao<br />
+                        seu lado, <strong className="font-semibold">você é especial demais pra mim</strong>, acordar e saber<br />
+                        que te tenho é tão tranquilizante que me faz flutuar
+                    </p>
                 </div>
 
-                <section className="flex flex-col justify-center items-center items-end gap-2 w-1/4 text-sm md:text-base">
-                    <Image src={RightDeclaration} alt="Direita" className="w-full h-auto" />
-                    <h2 className="w-full text-center font-bold">VOCÊ</h2>
-                    <h2 className="w-full text-center font-semibold">é o meu melhor presente</h2>
-                </section>
-            </main>
-
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setIsOpen(false)}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.8 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.8 }}
-                            transition={{ duration: 0.3 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="w-[90vw] max-w-2xl p-4"
-                        >
-                            <Image src={Fotos} alt="Ampliado" className="rounded-lg w-full h-auto" />
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <footer
-                className="h-[10vh] w-full bg-center"
-                style={{
-                    backgroundImage: `url(${BackgroundBubble.src})`,
-                }}
-            ></footer>
-        </>
-    );
+                <div style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    boxShadow: '0 0 75px rgb(255, 255, 255)',
+                    padding: '1rem',
+                    borderRadius: '12px',
+                }}>
+                    <Image
+                        src={EuTeAmo}
+                        alt="Eu te amo"
+                        className="w-full h-auto max-w-[340px]"
+                    />
+                </div>
+            </section>
+        </motion.main>
+    )
 }
