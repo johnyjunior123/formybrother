@@ -2,14 +2,12 @@
 
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
-import FotoPrincipal from '@/public/assets/pagetwo/fotoprincipal.png'
-import Foto1 from '@/public/assets/pagetwo/foto1.png'
-import Foto2 from '@/public/assets/pagetwo/foto2.png'
 import background from '@/public/assets/pagetwo/background-love.jpg'
 import EuTeAmo from '@/public/assets/pagetwo/euteamo.jpg'
 import Image from 'next/image'
 import CalendarMini from '@/components/mini-calendar'
 import localFont from 'next/font/local'
+import { imageLink } from '@/utils/imageLink'
 
 const Times = localFont({
     src: '../../public/fonts/times.ttf',
@@ -51,10 +49,10 @@ export default function PageTwo() {
         >
             <section className="flex flex-wrap justify-center items-center gap-40 px-4 py-6 flex-1">
                 <div className='flex flex-col'>
-                    <Image src={Foto1} alt="" className='max-w-[220px] w-full h-auto' />
-                    <Image src={Foto2} alt="" className='max-w-[220px] w-full h-auto' />
+                    <Image src={imageLink(process.env.NEXT_PUBLIC_LEFT1)} width={200} height={200} alt="" className='max-w-[220px] w-full h-auto' />
+                    <Image src={imageLink(process.env.NEXT_PUBLIC_LEFT2)} width={200} height={200} alt="" className='max-w-[220px] w-full h-auto' />
                 </div>
-                <Image src={FotoPrincipal} alt="" className='max-w-[340px] w-full h-auto' />
+                <Image src={imageLink(process.env.NEXT_PUBLIC_MID)} width={300} height={300} alt="" className='max-w-[340px] w-full h-auto' />
                 <div className='flex flex-col'>
                     <CalendarMini />
                 </div>
@@ -69,10 +67,8 @@ export default function PageTwo() {
                         borderRadius: '12px',
                     }}
                 >
-                    <p className="text-black text-base md:text-lg font-medium italic leading-relaxed text-center">
-                        Os melhores dias da minha vida foram, são, e vão ser ao<br />
-                        seu lado, <strong className="font-semibold">você é especial demais pra mim</strong>, acordar e saber<br />
-                        que te tenho é tão tranquilizante que me faz flutuar
+                    <p className="text-black w-[400px] text-base md:text-lg font-medium italic leading-relaxed text-center">
+                        {process.env.NEXT_PUBLIC_FRASE_PAGE_TWO}
                     </p>
                 </div>
 

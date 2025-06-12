@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <header className={`${CupCakes.className} flex flex-4 justify-center items-center text-black text-4xl font-bold tracking-widest mt-6`}>
-        <h1>DIÁRIO DO MAX</h1>
+        <h1>DIÁRIO DO {process.env.NEXT_PUBLIC_DIARIO}</h1>
       </header>
       <main className={`${CupCakes.className} flex flex-2 flex-col lg:flex-row items-center justify-between w-full mt-10 gap-10"`}>
         <section id="login" className="w-full lg:w-1/3 flex justify-center">
@@ -33,11 +33,11 @@ export default function Home() {
         </section>
       </main>
       <footer className={`${CupCakes.className} flex flex-2 items-end justify-between w-full mt-10 border-b-6 border-black `}>
-        <h2 className=" text-black text-[5vw] font-bold">67%</h2>
+        <h2 className=" text-black text-[5vw] font-bold">{process.env.NEXT_PUBLIC_PORCENTAGEM}%</h2>
         <Image src={Pombinhos} alt="Casal se olhando" className="max-w-[40%] h-auto
           mx-auto mt-6
           lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:mx-0 lg:mt-0" />
-        <h2 className="text-black text-lg tracking-widest">SEGREDOS DE 8 MESES</h2>
+        <h2 className="text-black text-lg tracking-widest">{process.env.NEXT_PUBLIC_FRASE}</h2>
       </footer>
     </>
   );

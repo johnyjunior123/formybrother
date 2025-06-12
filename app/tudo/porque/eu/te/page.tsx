@@ -7,8 +7,8 @@ import Image from 'next/image';
 import BackgroundBubble from '@/public/assets/pagefour-2/Imagem41.png';
 import LeftDeclaration from '@/public/assets/pagefour-2/Imagem42.png';
 import RightDeclaration from '@/public/assets/pagefour-2/Imagem43.png';
-import Fotos from '@/public/assets/pagefour-2/Imagem44.png';
 import localFont from 'next/font/local'
+import { imageLink } from '@/utils/imageLink';
 
 const Zarid = localFont({
     src: '../../../../../public/fonts/zarid.ttf',
@@ -44,7 +44,8 @@ export default function PageThree() {
                             className="w-full h-full"
                         >
                             <Image
-                                src={Fotos}
+                                src={imageLink(process.env.NEXT_PUBLIC_PHOTO_MID)}
+                                width={300} height={300}
                                 alt="Fotos"
                                 className="w-full h-full object-cover rounded-xl"
                             />
@@ -83,7 +84,7 @@ export default function PageThree() {
                             onClick={(e) => e.stopPropagation()}
                             className="w-[90vw] max-w-2xl p-4"
                         >
-                            <Image src={Fotos} alt="Ampliado" className="rounded-lg w-full h-auto" />
+                            <Image src={imageLink(process.env.NEXT_PUBLIC_PHOTO_MID)} alt="Ampliado" className="rounded-lg w-full h-auto" width={300} height={300} />
                         </motion.div>
                     </motion.div>
                 )}

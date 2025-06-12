@@ -14,7 +14,7 @@ export function Login() {
 
     const onClickLogin = () => {
         setLoading(true)
-        if (senha === '0810') {
+        if (senha == process.env.NEXT_PUBLIC_PASSWORD) {
             return push('/tudo/')
         }
         alert('Senha incorreta!')

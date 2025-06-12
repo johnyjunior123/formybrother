@@ -1,9 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 interface BalloonProps {
-  img: StaticImageData;
+  img: string;
   pos: string;
 }
 
@@ -23,6 +23,8 @@ export function Balloon({ img, pos }: BalloonProps) {
     >
       <a href="/tudo/porque/eu">
         <Image
+          width={100}
+          height={100}
           src={img}
           alt="Balão de fala"
           className="w-[200px] h-[200px] object-contain"

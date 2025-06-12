@@ -2,15 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Cine from '@/public/assets/pagefour/cine.png';
-import Amor from '@/public/assets/pagefour/Imagem10.png';
-import Coracao from '@/public/assets/pagefour/Imagem5.png';
-import Coracoes from '@/public/assets/pagefour/Imagem6.png';
-import Folha from '@/public/assets/pagefour/Imagem7.png';
-import Gato from '@/public/assets/pagefour/Imagem8.png';
-import Estrela from '@/public/assets/pagefour/Imagem9.png';
 import Image from 'next/image';
+import { imageLink } from '@/utils/imageLink';
 
 export function HeaderCine() {
+    const fotos: string[] = JSON.parse(process.env.NEXT_PUBLIC_CINE_PHOTOS ?? "[]");
+    console.log(fotos)
     return (
         <header className="flex flex-1 relative overflow-hidden h-96">
             <motion.div
@@ -30,9 +27,9 @@ export function HeaderCine() {
                         className="object-cover"
                     />
                     {
-                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img, i) => (
+                        fotos.map((img, i) => (
                             <div key={i} className="flex flex-1 inset-0 flex justify-center items-center gap-2">
-                                <Image src={img} alt="" className='w-full' />
+                                <Image width={100} height={100} src={imageLink(img)} alt="" className='w-full' />
                             </div>
                         ))
                     }
@@ -47,9 +44,9 @@ export function HeaderCine() {
                         className="object-cover"
                     />
                     {
-                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img, i) => (
+                        fotos.map((img, i) => (
                             <div key={i} className="flex flex-1 inset-0 flex justify-center items-center gap-2">
-                                <Image src={img} alt="" className='w-full' />
+                                <Image width={100} height={100} src={imageLink(img)} alt="" className='w-full' />
                             </div>
                         ))
                     }

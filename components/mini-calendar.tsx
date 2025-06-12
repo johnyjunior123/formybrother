@@ -6,8 +6,10 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function LoveCalendar() {
-    const year = 2024;
-    const month = 9; // Outubro (0-index)
+    const year = process.env.NEXT_PUBLIC_YEAR ? parseInt(process.env.NEXT_PUBLIC_YEAR) : 0;
+    const month = process.env.NEXT_PUBLIC_MONTH ? parseInt(process.env.NEXT_PUBLIC_MONTH) : 0;
+    const day = process.env.NEXT_PUBLIC_DAY ? parseInt(process.env.NEXT_PUBLIC_DAY) : 0;
+    const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
     const router = useRouter();
     const [selectedDay, setSelectedDay] = useState<number | null>(null);
@@ -32,7 +34,7 @@ export default function LoveCalendar() {
 
     return (
         <div className="inline-block bg-white p-4 rounded-lg border text-center font-serif relative">
-            <h2 className="text-xl font-bold italic mb-1 text-black">9 de Outubro de 2024</h2>
+            <h2 className="text-xl font-bold italic mb-1 text-black">{day} de {months[month - 1]} de {year}</h2>
             <div className="border-b border-black mb-2"></div>
 
             <div className="grid grid-cols-7 gap-1 text-sm font-bold text-red-600">
@@ -80,11 +82,11 @@ export default function LoveCalendar() {
             {selectedDay && (
                 <div className="absolute left-1/2 top-full mt-4 transform -translate-x-1/2 w-64 bg-pink-100 text-black p-4 rounded-xl shadow-lg transition-all animate-fade-in-up">
                     <p className="text-sm italic font-semibold text-center">
-                        {selectedDay === 9
+                        {selectedDay === day
                             ? 'Neste dia a gente se apaixonou ainda mais ❤️'
                             : `Você é o meu motivo favorito de todos os dias!`}
                     </p>
-                    {selectedDay === 9 && (
+                    {selectedDay === day && (
                         <button
                             onClick={() => router.push('/tudo/porque/')}
                             className="cursor-pointer mt-4 mx-auto flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition"
