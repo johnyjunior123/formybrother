@@ -25,8 +25,8 @@ const fadeUp = {
         opacity: 1,
         y: 0,
         transition: {
-            delay: i * 3,
-            duration: 5,
+            delay: i * 1,
+            duration: 3,
             ease: 'easeOut'
         }
     })
@@ -72,7 +72,7 @@ export default function PageTwo() {
                 <Image src={SuperPoderosas} alt='' />
                 <h2>VOCÊ É UMA PESSOA AMOROSA</h2>
                 <Image src={LeftArrow} alt='' />
-            </motion.div>
+            </motion.div>   
 
             <motion.div
                 initial="hidden"
@@ -89,10 +89,10 @@ export default function PageTwo() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                custom={4}
+                custom={3}
                 className='absolute top-45 right-40 flex flex-col items-center w-32 text-center text-xs md:text-sm'
             >
-                <Image src={RightArrow} alt='' />
+                <Image src={LeftArrow} alt='' className='-scale-x-100 h-auto' />
             </motion.div>
 
             <motion.div
@@ -109,7 +109,7 @@ export default function PageTwo() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                custom={6}
+                custom={7}
                 className='absolute bottom-25 left-130 flex items-center w-32 text-center text-xs md:text-sm'
             >
                 <Image src={LeftBottom} alt='' />
@@ -141,7 +141,7 @@ export default function PageTwo() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                custom={9}
+                custom={8}
                 className='absolute bottom-8 right-4 flex flex-col items-center w-36 text-center text-xs md:text-sm'
             >
                 <Image src={AnimeGenerico} alt='' />

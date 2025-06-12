@@ -1,10 +1,10 @@
 import { Balloon } from '@/components/balloon'
 import { StarsAndHearts } from '@/components/star-and-hearts'
-import Balloon1 from '@/public/assets/balloons/balloon.jpg'
-import Balloon2 from '@/public/assets/balloons/balloon2.jpg'
-import Balloon3 from '@/public/assets/balloons/balloon3.jpg'
-import Balloon4 from '@/public/assets/balloons/balloon4.jpg'
-import Balloon5 from '@/public/assets/balloons/balloon5.jpg'
+import Balloon1 from '@/public/assets/balloons/balloon.png'
+import Balloon2 from '@/public/assets/balloons/balloon2.png'
+import Balloon3 from '@/public/assets/balloons/balloon3.png'
+import Balloon4 from '@/public/assets/balloons/balloon4.png'
+import Balloon5 from '@/public/assets/balloons/balloon5.png'
 import Balloon6 from '@/public/assets/balloons/balloon6.png'
 
 export default function PageThree() {
