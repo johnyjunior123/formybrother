@@ -31,7 +31,6 @@ const fadeUp = {
 export default function PageTwo() {
     return (
         <main className={`${gloria.className} relative w-screen h-screen bg-white text-black overflow-auto md:overflow-hidden`}>
-
             <motion.div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 text-center"
                 initial="hidden"
@@ -110,9 +109,9 @@ export default function PageTwo() {
                 custom={6}
                 className="absolute bottom-4 right-2 md:right-4 flex flex-col items-center w-28 md:w-36 text-center text-xs md:text-sm"
             >
+                <h2 className="text-xs md:text-base">SUA DEDICAÇÃO É INCRÍVEL PRA MIM</h2>
                 <Image src={AnimeGenerico} alt='' className="w-20 md:w-auto" />
             </motion.div>
-
         </main>
 
     )

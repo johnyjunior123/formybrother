@@ -52,13 +52,16 @@ export default function PageThree() {
                     </a>
                 </div>
 
-                <section className="flex flex-col justify-center items-center md:items-end gap-2 w-full md:w-1/4 text-sm md:text-base">
+                <section className="flex flex-col justify-center items-center w-full md:w-1/4 text-sm md:text-base">
                     <Image src={RightDeclaration} alt="Direita" className="w-full h-auto" />
-                    <h2 className="text-center md:text-right w-full pl-1 pr-1 font-bold text-[24px] bg-black text-white">
+                    <h2 className="text-center md:text-right pl-12 pr-12 font-bold text-[24px] bg-black text-white">
                         VOCÊ
                     </h2>
-                    <h2 className="w-full text-center md:text-right font-semibold text-[24px]">
-                        é o meu melhor <br /><strong className='font-extrabold text-[24px]'>presente</strong>
+                    <h2 className="text-center md:text-right font-semibold text-[24px]">
+                        é o meu melhor <br />
+                    </h2>
+                    <h2 className='text-center md:text-right font-black text-[26px]'>
+                        <strong>presente</strong>
                     </h2>
                 </section>
             </main>
