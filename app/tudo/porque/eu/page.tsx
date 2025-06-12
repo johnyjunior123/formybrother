@@ -8,10 +8,6 @@ import Stitch from '@/public/assets/animes/Imagem18.png'
 import Stitch2 from '@/public/assets/animes/Imagem19.png'
 import Goku from '@/public/assets/animes/Imagem20.png'
 import AnimeGenerico from '@/public/assets/animes/Imagem45.png'
-import LeftArrow from '@/public/assets/animes/Imagem21.png'
-import LeftBottom from '@/public/assets/animes/Imagem22.png'
-import RightBottom from '@/public/assets/animes/Imagem23.png'
-import RightArrow from '@/public/assets/animes/Imagem24.png'
 import { Gloria_Hallelujah } from 'next/font/google'
 
 const gloria = Gloria_Hallelujah({
