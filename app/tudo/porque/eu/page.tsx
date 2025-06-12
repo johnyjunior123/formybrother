@@ -34,9 +34,10 @@ const fadeUp = {
 
 export default function PageTwo() {
     return (
-        <main className={`${gloria.className} flex flex-1 relative w-screen h-screen overflow-hidden bg-white text-black`}>
+        <main className={`${gloria.className} relative w-screen h-screen bg-white text-black overflow-auto md:overflow-hidden`}>
+
             <motion.div
-                className="flex text-center absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-full justify-center px-4"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 text-center"
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
@@ -44,14 +45,14 @@ export default function PageTwo() {
             >
                 <h1 className="leading-none">
                     <motion.span
-                        className="block text-[66px] font-bold"
+                        className="block text-4xl md:text-[66px] font-bold"
                         variants={fadeUp}
                         custom={0}
                     >
                         MOTIVOS <br /> PELO QUAL EU
                     </motion.span>
                     <motion.span
-                        className="block text-[220px] font-bold text-red-600"
+                        className="block text-6xl md:text-[220px] font-bold text-red-600"
                         variants={fadeUp}
                         custom={1}
                     >
@@ -67,22 +68,10 @@ export default function PageTwo() {
                 animate="visible"
                 variants={fadeUp}
                 custom={2}
-                className='flex absolute top-1 left-40 transform -translate-x-1/2 translate-y-1/2 w-48 md:w-64'
+                className="flex absolute top-25 left-25 md:left-40 transform -translate-x-1/2 translate-y-1/2 w-36 md:w-64 items-center gap-2"
             >
-                <Image src={SuperPoderosas} alt='' />
-                <h2>VOCÊ É UMA PESSOA AMOROSA</h2>
-                <Image src={LeftArrow} alt='' />
-            </motion.div>   
-
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                custom={3}
-                className='absolute top-20 right-25 flex items-center w-32 text-center text-xs md:text-sm'
-            >
-                <h2>TEU SORRISO É LINDO</h2>
-                <Image src={Goku} alt='' />
+                <Image src={SuperPoderosas} alt='' className="w-12 md:w-auto" />
+                <h2 className="text-xs md:text-base">VOCÊ É UMA PESSOA AMOROSA</h2>
             </motion.div>
 
             <motion.div
@@ -90,9 +79,20 @@ export default function PageTwo() {
                 animate="visible"
                 variants={fadeUp}
                 custom={3}
-                className='absolute top-45 right-40 flex flex-col items-center w-32 text-center text-xs md:text-sm'
+                className="absolute top-27 right-4 md:right-20 flex items-center w-24 md:w-32 text-center text-xs md:text-sm gap-2"
             >
-                <Image src={LeftArrow} alt='' className='-scale-x-100 h-auto' />
+                <h2>TEU SORRISO É LINDO</h2>
+                <Image src={Goku} alt='' className="w-12 md:w-auto" />
+            </motion.div>
+
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeUp}
+                custom={4}
+                className="absolute bottom-24 left-2 md:left-4 flex flex-col items-center w-20 md:w-32 text-center text-xs md:text-sm"
+            >
+                <Image src={Rakan} alt='' className="w-16 md:w-auto" />
             </motion.div>
 
             <motion.div
@@ -100,52 +100,24 @@ export default function PageTwo() {
                 animate="visible"
                 variants={fadeUp}
                 custom={5}
-                className='absolute bottom-32 left-4 flex flex-col items-center w-32 text-center text-xs md:text-sm'
+                className="absolute bottom-4 left-16 md:left-[250px] flex items-center w-32 text-center text-xs md:text-sm gap-2"
             >
-                <Image src={Rakan} alt='' />
-            </motion.div>
-
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                custom={7}
-                className='absolute bottom-25 left-130 flex items-center w-32 text-center text-xs md:text-sm'
-            >
-                <Image src={LeftBottom} alt='' />
-            </motion.div>
-
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                custom={7}
-                className='absolute bottom-5 left-85 flex items-center w-32 text-center text-xs md:text-sm'
-            >
-                <Image src={Stitch} alt='' />
+                <Image src={Stitch} alt='' className="w-10 md:w-auto" />
                 <h2>VOCÊ É PARCERIA FECHADA</h2>
-                <Image src={Stitch2} alt='' />
+                <Image src={Stitch2} alt='' className="w-10 md:w-auto" />
             </motion.div>
 
             <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
-                custom={8}
-                className='absolute bottom-25 right-45 flex flex-col items-center w-36 text-center text-xs md:text-sm'
+                custom={6}
+                className="absolute bottom-4 right-2 md:right-4 flex flex-col items-center w-28 md:w-36 text-center text-xs md:text-sm"
             >
-                <Image src={RightBottom} alt='' />
+                <Image src={AnimeGenerico} alt='' className="w-20 md:w-auto" />
             </motion.div>
 
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                custom={8}
-                className='absolute bottom-8 right-4 flex flex-col items-center w-36 text-center text-xs md:text-sm'
-            >
-                <Image src={AnimeGenerico} alt='' />
-            </motion.div>
         </main>
+
     )
 }

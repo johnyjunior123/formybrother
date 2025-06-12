@@ -32,7 +32,18 @@ export default function PageTwo() {
     return (
         <motion.main
             animate={controls}
-            className={`${Times.className} flex flex-col h-screen w-screen bg-cover bg-no-repeat bg-black overflow-hidden`}
+            className={`
+            ${Times.className} 
+            flex flex-col 
+            min-h-screen 
+            md:h-screen 
+            w-screen 
+            bg-cover 
+            bg-no-repeat 
+            bg-black 
+            overflow-auto 
+            md:overflow-hidden
+            `}
             style={{
                 backgroundImage: `url(${background.src})`,
                 backgroundSize: '150%',
@@ -44,7 +55,7 @@ export default function PageTwo() {
                     <Image src={Foto2} alt="" className='max-w-[220px] w-full h-auto' />
                 </div>
                 <Image src={FotoPrincipal} alt="" className='max-w-[340px] w-full h-auto' />
-                <div>
+                <div className='flex flex-col'>
                     <CalendarMini />
                 </div>
             </section>

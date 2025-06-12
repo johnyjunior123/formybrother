@@ -21,7 +21,7 @@ export default function PageFive() {
         <>
             <HeaderCine />
 
-            <main className="flex flex-1 font-above-the-beyond"
+            <main className="flex flex-1 font-above-the-beyond mt-5 justify-center"
                 style={{
                     backgroundImage: `
                     url(${CineLeft.src}),
@@ -43,7 +43,7 @@ export default function PageFive() {
                     <Image src={CoracaoLeftSmall} alt="" />
                     <Image src={CoracaoLeft} alt="" />
                 </div>
-                <div className='flex flex-col justify-center items-center text-black gap-14'>
+                <div className='text-center flex flex-col justify-center items-center text-black gap-14'>
                     <h1 className='text-[45px] font-bold'>Feliz dia dos Namorados
                     </h1>
                     <h2 className='text-[25px]'>Te amar virou meu hábito favorito… e nem preciso lembrar, meu coração já sabe de cor

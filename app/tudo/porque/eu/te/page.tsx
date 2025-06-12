@@ -26,35 +26,40 @@ export default function PageThree() {
                 }}
             ></header>
 
-            <main className={`${Zarid.className} text-black flex-1 w-full  relative flex items-center justify-between px-4 md:px-12`}>
-                <section className="flex flex-col items-start justify-center gap-2 w-1/4 text-sm md:text-base">
-                    <h2 className="w-full text-center font-bold text-[24px]">Que o amor continue presente na nossa história</h2>
+            <main className={`${Zarid.className} text-black flex-1 w-full relative flex flex-col md:flex-row items-center justify-between px-4 md:px-12 gap-6 md:gap-0`}>
+                <section className="flex flex-col items-center md:items-start justify-center gap-2 w-full md:w-1/4 text-sm md:text-base">
+                    <h2 className="w-full text-center md:text-left font-bold text-[24px]">
+                        Que o amor continue presente na nossa história
+                    </h2>
                     <Image src={LeftDeclaration} alt="Esquerda" className="w-full h-auto" />
-                    <h2 className="w-full text-center font-semibold text-[24px]">Sou louco por você</h2>
+                    <h2 className="w-full text-center md:text-left font-semibold text-[24px]">Sou louco por você</h2>
                 </section>
 
-                <div className="fixed inset-0 z-50 flex justify-center">
-                    <motion.div
-                        className="w-[50vw] max-w-sm h-screen cursor-pointer overflow-hidden rounded-xl"
-                        whileHover={{ scale: 1.05 }}
-                        onClick={() => setIsOpen(true)}
-                    >
-                        <a href="/tudo/porque/eu/te/amo">
+                <div className="w-full md:w-[50vw] max-w-sm cursor-pointer overflow-hidden rounded-xl relative md:fixed md:top-[10vh] md:left-1/2 md:-translate-x-1/2 md:h-[80vh] flex justify-center items-center"
+                    onClick={() => setIsOpen(true)}
+                >
+                    <a href="/tudo/porque/eu/te/amo" className="w-full h-full block">
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="w-full h-full"
+                        >
                             <Image
                                 src={Fotos}
                                 alt="Fotos"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-xl"
                             />
-                        </a>
-                    </motion.div>
+                        </motion.div>
+                    </a>
                 </div>
 
-
-
-                <section className="flex flex-col justify-center items-center items-end gap-2 w-1/4 text-sm md:text-base">
+                <section className="flex flex-col justify-center items-center md:items-end gap-2 w-full md:w-1/4 text-sm md:text-base">
                     <Image src={RightDeclaration} alt="Direita" className="w-full h-auto" />
-                    <h2 className="text-center justify-center w-full pl-1 pr-1 items-center font-bold text-[24px] bg-black text-white">VOCÊ</h2>
-                    <h2 className="w-full text-center font-600 text-[24px]">é o meu melhor <br /><strong className='font-900 text-[24px]'>presente</strong></h2>
+                    <h2 className="text-center md:text-right w-full pl-1 pr-1 font-bold text-[24px] bg-black text-white">
+                        VOCÊ
+                    </h2>
+                    <h2 className="w-full text-center md:text-right font-semibold text-[24px]">
+                        é o meu melhor <br /><strong className='font-extrabold text-[24px]'>presente</strong>
+                    </h2>
                 </section>
             </main>
 
