@@ -29,12 +29,14 @@ export function HeaderCine() {
                         fill
                         className="object-cover"
                     />
-                    <div className="flex flex-1 inset-0 flex justify-center items-center gap-2"> {
-                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img) => (
-                            <Image src={img} alt="" className='w-full' />
+                    {
+                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img, i) => (
+                            <div key={i} className="flex flex-1 inset-0 flex justify-center items-center gap-2">
+                                <Image src={img} alt="" className='w-full' />
+                            </div>
                         ))
                     }
-                    </div>
+
                 </div>
 
                 <div className="flex relative w-screen h-full">
@@ -44,12 +46,13 @@ export function HeaderCine() {
                         fill
                         className="object-cover"
                     />
-                    <div className="flex flex-1 inset-0 flex justify-center items-center gap-2"> {
-                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img) => (
-                            <Image src={img} alt="" className='w-full' />
+                    {
+                        [Amor, Coracao, Coracoes, Folha, Gato, Estrela].map((img, i) => (
+                            <div key={i} className="flex flex-1 inset-0 flex justify-center items-center gap-2">
+                                <Image src={img} alt="" className='w-full' />
+                            </div>
                         ))
                     }
-                    </div>
                 </div>
             </motion.div>
         </header>

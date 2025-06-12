@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion'
 
 export function Login() {
-    const [senha, setSenha] = useState<String | null>(null)
+    const [senha, setSenha] = useState<string | null>(null)
     const [loading, setLoading] = useState(false)
     const { push } = useRouter()
 
